@@ -5,6 +5,7 @@
 
 declare global {
     export interface Window {
+        Trello: Trello.Client | undefined
         TrelloPowerUp: Trello.PowerUp | undefined
         locale: string
     }
@@ -13,6 +14,31 @@ declare global {
 type TrelloIFrame = Trello.PowerUp.IFrame
 
 export namespace Trello {
+    interface Client {
+        get: Client.RESTAction
+        post: Client.RESTAction
+        put: Client.RESTAction
+        delete: Client.RESTAction
+        authorize: (
+            type?: "redirect" | "popup",
+            name?: string,
+            persist?: boolean,
+            interactive?: boolean,
+            scope?: {
+                read: boolean
+                write: boolean
+                account: boolean
+            },
+            expiration?: "1hour" | "30days" | "never",
+            success?: () => void,
+            error?: () => void
+        ) => void
+    }
+
+    namespace Client {
+        type RESTAction<T> = (path: string, params?: unknown, success?: () => T, error?: () => void) => void
+    }
+
     export namespace Callback {
         export type CacheAction = "run" | "retain" | "release"
         export type SerializeResult = (value: unknown, key?: string) => unknown
@@ -29,7 +55,9 @@ export namespace Trello {
 
         export interface Cache {
             callback(t: PowerUp.IFrame, options: CacheOptions, serializeResult: SerializeResult): PromiseLike<unknown>
+
             serialize(fx: (t: PowerUp.IFrame, args: unknown) => unknown): SerializeOutput
+
             reset(): void
         }
     }
@@ -40,11 +68,14 @@ export namespace Trello {
         CallbackCache: Callback.Cache
         PostMessageIO: unknown // PostMessageIO
         iframe(options?: PowerUp.IFrameOptions): PowerUp.IFrame
+
         initialize(
             handlers: PowerUp.CapabilityHandlers,
             options?: PowerUp.PluginOptions
         ): PowerUp.Plugin | PowerUp.IFrame
+
         restApiError(): unknown
+
         util: PowerUp.Util
     }
 
@@ -124,7 +155,8 @@ export namespace Trello {
 
         export interface PopupOptionsItem {
             text: string
-            callback?(t: unknown, options: unknown): PromiseLike<void>
+
+            callback?(t: TrelloIFrame, options: unknown): PromiseLike<void>
         }
 
         export interface AuthorizationStatusResponse {
@@ -161,6 +193,7 @@ export namespace Trello {
 
         export interface PopupIframeOptions {
             callback?(t: PowerUp.IFrame, options: { locale: string }): void
+
             title: string
             url: string
             args?: {
@@ -173,12 +206,14 @@ export namespace Trello {
         export interface PopupDateOptions {
             type: "date" | "datetime"
             title: string
+
             callback(
                 t: PowerUp.IFrame,
                 options: {
                     date: string
                 }
             ): PromiseLike<void>
+
             date?: Date
             minDate?: Date
             maxDate?: Date
@@ -190,20 +225,25 @@ export namespace Trello {
             title: string
             message: string
             confirmText: string
+
             onConfirm(t: PowerUp.IFrame, opts: unknown): PromiseLike<void>
+
             confirmStyle?: "primary" | "danger"
             mouseEvent: MouseEvent
         }
 
         export interface PopupConfirmWithCancelOptions extends PopupConfirmOptions {
             cancelText: string
+
             onCancel(t: PowerUp.IFrame, opts: unknown): PromiseLike<void>
         }
 
         export interface HeaderAction {
             icon: string
             alt: string
+
             callback(): void
+
             position: "left" | "right"
             url?: string
         }
@@ -226,6 +266,7 @@ export namespace Trello {
         // INTERNAL INTERFACES
         export interface Localizer {
             resourceDictionary: ResourceDictionary
+
             localize(key: string, args: readonly string[]): string
         }
 
@@ -237,7 +278,9 @@ export namespace Trello {
 
         export interface LocalizerOptions {
             localizer?: Localizer
+
             loadLocalizer?(): PromiseLike<Localizer>
+
             localization?: Localization
         }
 
@@ -263,20 +306,21 @@ export namespace Trello {
             }
 
             initLocalizer(locale: string, options: LocalizerOptions): PromiseLike<void>
+
             makeErrorEnum(): Error
+
             relativeUrl(url: string): string
         }
 
         export interface AnonymousHostHandlers {
             requestWithContext(command: string, options: unknown): PromiseLike<unknown>
+
             getAll(): PromiseLike<unknown>
-            get(
-                scope: Scope | string,
-                visibility: Visibility,
-                key?: string,
-                defaultValue?: unknown
-            ): PromiseLike<unknown>
+
+            get(scope: Scope | string, visibility: Visibility, key?: string, defaultValue?: unknown): PromiseLike<any>
+
             set(scope: Scope | string, visibility: Visibility, key: string, value?: unknown): PromiseLike<void>
+
             set(
                 scope: Scope | string,
                 visibility: Visibility,
@@ -284,35 +328,56 @@ export namespace Trello {
                     [key: string]: unknown
                 }
             ): PromiseLike<void>
+
             remove(scope: Scope | string, visibility: Visibility, key: string): PromiseLike<void>
+
             remove(scope: Scope | string, visibility: Visibility, entries: string[]): PromiseLike<void>
+
             safe(html: string): string
+
             localizeKey(
                 key: string,
                 data?: {
                     [key: string]: string
                 }
             ): string
+
             localizeKeys(keys: [string | string[]]): string[]
+
             localizeNode(node: Element): void
+
             board(...fields: ["all"] | BoardFields[]): PromiseLike<Board>
+
             cards(...fields: ["all"] | CardFields[]): PromiseLike<Card[]>
+
             lists(...fields: ["all"] | ListFields[]): PromiseLike<List[]>
+
             member(...fields: ["all"] | MemberFields[]): PromiseLike<Member>
+
             organization(...fields: ["all"] | OrganizationFields[]): PromiseLike<Organization>
         }
 
         export interface HostHandlers extends AnonymousHostHandlers {
             getContext(): Context
+
             isMemberSignedIn(): boolean
+
             memberCanWriteToModel(modelType: Model): boolean
+
             arg(name: string, defaultValue?: unknown): unknown
+
             signUrl(url: string, args?: { [key: string]: unknown }): string
+
             navigate(options: { url: string }): unknown
+
             showCard(idCard: string): PromiseLike<void>
+
             hideCard(): PromiseLike<void>
+
             alert(options: { message: string; duration?: number; display?: AlertDisplay }): PromiseLike<void>
+
             hideAlert(): PromiseLike<void>
+
             popup(
                 options:
                     | PopupOptions
@@ -322,7 +387,9 @@ export namespace Trello {
                     | PopupConfirmOptions
                     | PopupConfirmWithCancelOptions
             ): PromiseLike<void>
+
             overlay(options: { url: string; args: { [key: string]: unknown }; inset: unknown }): PromiseLike<void>
+
             boardBar(options: {
                 url: string
                 args?: { [key: string]: unknown }
@@ -333,6 +400,7 @@ export namespace Trello {
                 actions?: HeaderAction[]
                 resizable?: boolean
             }): PromiseLike<void>
+
             modal(options: {
                 url: string
                 accentColor?: string | Colors
@@ -343,24 +411,38 @@ export namespace Trello {
                 actions?: HeaderAction[]
                 args?: { [key: string]: unknown }
             }): PromiseLike<void>
+
             updateModal(options: {
                 accentColor?: string | Colors
                 actions?: HeaderAction[]
                 fullscreen?: boolean
                 title?: string
             }): PromiseLike<void>
+
             closePopup(): PromiseLike<void>
+
             back(): PromiseLike<void>
+
             hideOverlay(): PromiseLike<void>
+
             closeOverlay(options?: { inset?: unknown }): PromiseLike<void>
+
             hideBoardBar(): PromiseLike<void>
+
             closeBoardBar(): PromiseLike<void>
+
             closeModal(): PromiseLike<void>
+
             sizeTo(arg: string | number | Element): PromiseLike<void>
+
             card(...fields: ["all"] | CardFields[]): PromiseLike<Card>
+
             list(...fields: ["all"] | ListFields[]): PromiseLike<List>
+
             attach(data: { name: string; url: string }): PromiseLike<void>
+
             requestToken(options: unknown): PromiseLike<string>
+
             authorize(
                 authUrl: string,
                 options?: {
@@ -369,9 +451,13 @@ export namespace Trello {
                     validToken?(value: string): boolean
                 }
             ): PromiseLike<string>
+
             storeSecret(secretKey: string, secretData: string): PromiseLike<void>
+
             loadSecret(secretKey: string): PromiseLike<string>
+
             clearSecret(secretKey: string): PromiseLike<void>
+
             notifyParent(
                 message: "done",
                 options?: {
@@ -384,6 +470,8 @@ export namespace Trello {
             context?: string
             secret?: string
             helpfulStacks?: boolean
+            appKey?: string
+            appName?: string
         }
 
         export interface IFrame extends HostHandlers {
@@ -392,13 +480,26 @@ export namespace Trello {
             secret?: string
             options: IFrameOptions
             i18nPromise: PromiseLike<void>
+
             init(): unknown
+
             connect(): void
+
             request(command: string, options: unknown): PromiseLike<unknown>
+
             render(fxRender: () => void): unknown
+
             initApi(): void
-            getRestApi(): unknown
+
+            getRestApi(): {
+                authorize: (props: any) => PromiseLike<string | Error>
+                isAuthorized: () => PromiseLike<boolean>
+                getToken: () => PromiseLike<string | null>
+                clearToken: () => PromiseLike<void>
+            }
+
             initSentry(): void
+
             NotHandled: unknown
         }
 
@@ -422,6 +523,7 @@ export namespace Trello {
 
         export interface Plugin extends AnonymousHostHandlers {
             options: PluginOptions
+
             connect(): unknown // return an instance of PostMessageIO
             request(command: string, options: unknown): PromiseLike<unknown> //  // return PostMessageIO.request, whatever that is
             init(): unknown // return an instance of PostMessageIO
@@ -470,6 +572,7 @@ export namespace Trello {
 
         export interface CardDetailBadge extends CardBadge {
             callback?(t: PowerUp.IFrame): void
+
             url?: string
             target?: string
         }
@@ -480,11 +583,13 @@ export namespace Trello {
 
         export interface ListAction {
             text: string
+
             callback(t: PowerUp.IFrame): PromiseLike<void>
         }
 
         export interface ListSorter {
             text: string
+
             callback(
                 t: PowerUp.IFrame,
                 options: {
@@ -497,7 +602,9 @@ export namespace Trello {
             icon: string
             text: string
             condition?: Condition
+
             callback(t: Trello.PowerUp.IFrame): PromiseLike<void>
+
             url?: string
             target?: string
         }
@@ -533,6 +640,7 @@ export namespace Trello {
 
         export interface LazyAttachmentSection extends AttachmentSectionBase {
             id: string
+
             title(): string
         }
 

@@ -19,7 +19,10 @@ const get =
     <T>(key: StorageKey): PromiseLike<T | undefined> =>
         trello.get(key.scope, key.visibility, key.key, undefined)
 
+const remove = (trello: TrelloIFrame) => (key: StorageKey) => trello.remove(key.scope, key.visibility, key.key)
+
 export const Storage = (trello: TrelloIFrame) => ({
     get: get(trello),
-    set: set(trello)
+    set: set(trello),
+    remove: remove(trello)
 })

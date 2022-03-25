@@ -7,10 +7,13 @@ export type StringKey = keyof typeof strings
 const strings = {
     loading: "Loading",
     sum: "Sum",
-    noDataError: "No suitable custom fields found in ",
+    noDataError: "No suitable custom fields found in selected list",
     allLists: "All Lists",
     selectAList: "Select a List",
-    field: "Field"
+    field: "Field",
+    mergeLists: "Merge Lists",
+    merge: "Merge",
+    addACardName: "Add a card name..."
 }
 
 const defaultString = (key: StringKey) => strings[key]
