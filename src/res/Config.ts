@@ -38,7 +38,8 @@ export const Config = {
     routes: {
         mergeLists: "/merge-lists",
         sums: "/sums",
-        boardButton: "/board-button"
+        boardButton: "/board-button",
+        privacy: "/privacy"
     },
     images: {
         logo: `${origin}/img/icon512-logo.png`,
