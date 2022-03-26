@@ -5,14 +5,16 @@ import { BoardButton as SumsBoardButton } from "./power-ups/sums/BoardButton"
 import { BoardButton as MergeListsBoardButton } from "./power-ups/merge-lists/BoardButton"
 import { GlobalStyles } from "./util/GlobalStyles"
 import { MergeLists } from "./power-ups/merge-lists/MergeLists"
-import { Index } from "./power-ups"
+import { Index } from "./routes"
 import { Config } from "./res/Config"
+import { Privacy } from "./routes/Privacy"
 
-const { sums, mergeLists, boardButton } = Config.routes
+const { sums, mergeLists, privacy, boardButton } = Config.routes
 const App = () => (
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<Index />} />
+            <Route path={privacy} element={<Privacy />} />
 
             {/* Sums power-up entry point */}
             <Route path={sums} element={<Sums />} />
