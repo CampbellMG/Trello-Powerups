@@ -8,6 +8,7 @@ import { Loading } from "../../components/Loading"
 import { API } from "../../data/API"
 import { LocalisedString } from "../../components/LocalisedString"
 import { Storage } from "../../data/Storage"
+import { Sizes } from "../../res/Sizes"
 
 const { localization } = Strings
 
@@ -136,9 +137,9 @@ const Wrapper = styled.div`
 `
 
 const ListSelector = styled(ListSelectorComponent)`
-    margin-bottom: 16px;
+    margin-bottom: ${Sizes.standard}px;
 `
 
 const CardNameInput = styled.input`
-    margin-bottom: 16px;
+    margin-bottom: ${Sizes.standard}px;
 `
