@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components"
 import { Sizes } from "../res/Sizes"
+import { Colours } from "../res/Colours"
 
 // Adapter from - https://github.com/tienpham94/react-awesome-spinners
 // Available under the MIT License
@@ -51,7 +52,7 @@ const Wrapper = styled.div`
         width: 11px;
         height: 11px;
         border-radius: 50%;
-        background: black;
+        background: ${Colours.primary};
         animation-timing-function: cubic-bezier(0, 1, 1, 0);
     }
 
