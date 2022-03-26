@@ -1,7 +1,11 @@
 {
   "loading": "Läser in",
   "sum": "Belopp",
-  "noDataError": "Inga lämpliga anpassade fält som finns i",
+  "noDataError": "Inga lämpliga anpassade fält som finns i vald lista",
   "allLists": "Alla listor",
-  "selectAList": "Välj en lista"
+  "selectAList": "Välj en lista",
+  "field": "Fält",
+  "mergeLists": "Sammanfoga listor",
+  "merge": "Sammanfoga",
+  "addACardName": "Lägg till ett kortnamn..."
 }

@@ -1,7 +1,11 @@
 {
   "loading": "Lasting",
   "sum": "Sum",
-  "noDataError": "Ingen egnede tilpassede felt funnet i",
+  "noDataError": "Ingen egnede egendefinerte felt funnet i valgt liste",
   "allLists": "Alle lister",
-  "selectAList": "Velg en liste"
+  "selectAList": "Velg en liste",
+  "field": "Felt",
+  "mergeLists": "Slå sammen lister",
+  "merge": "Slå sammen",
+  "addACardName": "Legg til et kortnavn..."
 }

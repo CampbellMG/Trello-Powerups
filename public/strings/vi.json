@@ -1,7 +1,11 @@
 {
   "loading": "Đang tải",
   "sum": "Tổng",
-  "noDataError": "Không có trường tùy chỉnh phù hợp được tìm thấy trong",
+  "noDataError": "Không có trường tùy chỉnh phù hợp được tìm thấy trong danh sách đã chọn",
   "allLists": "Tất cả các danh sách",
-  "selectAList": "Chọn một danh sách"
+  "selectAList": "Chọn một danh sách",
+  "field": "Đồng ruộng",
+  "mergeLists": "Danh sách hợp nhất",
+  "merge": "Hợp nhất.",
+  "addACardName": "Thêm tên thẻ..."
 }

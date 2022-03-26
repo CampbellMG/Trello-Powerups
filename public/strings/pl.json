@@ -1,7 +1,11 @@
 {
   "loading": "Ładowanie",
   "sum": "Suma",
-  "noDataError": "Nie ma odpowiednich niestandardowych dziedzin",
+  "noDataError": "Brak odpowiednich płyt niestandardowych znalezionych na wybranej liście",
   "allLists": "Wszystkie listy",
-  "selectAList": "Wybierz listę"
+  "selectAList": "Wybierz listę",
+  "field": "Pole",
+  "mergeLists": "Merge Lists.",
+  "merge": "Łączyć",
+  "addACardName": "Dodaj nazwę karty..."
 }

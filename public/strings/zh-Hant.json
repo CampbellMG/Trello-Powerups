@@ -1,7 +1,11 @@
 {
   "loading": "裝載",
   "sum": "和",
-  "noDataError": "沒有找到合適的自定義字段",
+  "noDataError": "未在選定列表中找到合適的自定義字段",
   "allLists": "所有清單",
-  "selectAList": "選擇列表"
+  "selectAList": "選擇列表",
+  "field": "場地",
+  "mergeLists": "合併列表",
+  "merge": "合併",
+  "addACardName": "添加卡名稱..."
 }

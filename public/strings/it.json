@@ -1,7 +1,11 @@
 {
   "loading": "Caricamento in corso",
   "sum": "Somma",
-  "noDataError": "Nessun campo personalizzato adatto trovato in",
+  "noDataError": "Nessun campo personalizzato adatto trovato nell'elenco selezionato",
   "allLists": "Tutti gli elenchi",
-  "selectAList": "Seleziona un elenco"
+  "selectAList": "Seleziona un elenco",
+  "field": "Campo",
+  "mergeLists": "Merge lists.",
+  "merge": "Unire",
+  "addACardName": "Aggiungi un nome di carta..."
 }

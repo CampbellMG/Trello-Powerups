@@ -1,7 +1,11 @@
 {
   "loading": "Chargement",
   "sum": "Somme",
-  "noDataError": "Aucun champ personnalisé approprié trouvé dans",
+  "noDataError": "Aucun champ personnalisé approprié trouvé dans la liste sélectionnée",
   "allLists": "Toutes les listes",
-  "selectAList": "Sélectionnez une liste"
+  "selectAList": "Sélectionnez une liste",
+  "field": "Champ",
+  "mergeLists": "Listes de fusion",
+  "merge": "Fusionner",
+  "addACardName": "Ajouter un nom de carte..."
 }

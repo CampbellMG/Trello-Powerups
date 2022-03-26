@@ -1,7 +1,11 @@
 {
   "loading": "Ladataan",
   "sum": "Summa",
-  "noDataError": "Ei sopivia mukautettuja kenttiä",
+  "noDataError": "Valitusta luettelosta ei löydy sopivia mukautettuja kenttiä",
   "allLists": "Kaikki luettelot",
-  "selectAList": "Valitse luettelo"
+  "selectAList": "Valitse luettelo",
+  "field": "Ala",
+  "mergeLists": "Yhdistä luettelot",
+  "merge": "Yhdistää",
+  "addACardName": "Lisää kortin nimi..."
 }

@@ -1,7 +1,11 @@
 {
   "loading": "装载",
   "sum": "和",
-  "noDataError": "没有找到合适的自定义字段",
+  "noDataError": "未在选定列表中找到合适的自定义字段",
   "allLists": "所有清单",
-  "selectAList": "选择列表"
+  "selectAList": "选择列表",
+  "field": "场地",
+  "mergeLists": "合并列表",
+  "merge": "合并",
+  "addACardName": "添加卡名称..."
 }

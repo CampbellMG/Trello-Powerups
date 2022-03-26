@@ -1,7 +1,11 @@
 {
   "loading": "Carregando",
   "sum": "Soma",
-  "noDataError": "Não há campos personalizados adequados encontrados em",
+  "noDataError": "Não há campos personalizados adequados encontrados na lista selecionada",
   "allLists": "Todas as listas",
-  "selectAList": "Selecione uma lista"
+  "selectAList": "Selecione uma lista",
+  "field": "Campo",
+  "mergeLists": "Mesclar listas",
+  "merge": "Mesclar.",
+  "addACardName": "Adicionar um nome de cartão..."
 }

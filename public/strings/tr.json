@@ -1,7 +1,11 @@
 {
   "loading": "Yükleniyor",
   "sum": "Toplamak",
-  "noDataError": "İçinde bulunan uygun özel alan yok",
+  "noDataError": "Seçilen listede uygun özel alan bulunamadı",
   "allLists": "Tüm listeler",
-  "selectAList": "Bir liste seçin"
+  "selectAList": "Bir liste seçin",
+  "field": "Alan",
+  "mergeLists": "Listeleri birleştirmek",
+  "merge": "Birleştirmek",
+  "addACardName": "Bir kart adı ekle..."
 }
