@@ -13,7 +13,10 @@ const strings = {
     field: "Field",
     mergeLists: "Merge Lists",
     merge: "Merge",
-    addACardName: "Add a card name..."
+    addACardName: "Add a card name...",
+    authorise: "Authorise",
+    authorisationHint:
+        "To read checklists and create cards on your board we need to connect your account. This plugin will never send your data outside of Trello."
 }
 
 const defaultString = (key: StringKey) => strings[key]

@@ -8,13 +8,15 @@ import { Loading } from "../../components/Loading"
 import { API } from "../../data/API"
 import { LocalisedString } from "../../components/LocalisedString"
 import { Storage } from "../../data/Storage"
+import { Sizes } from "../../res/Sizes"
 
 const { localization } = Strings
 
 export const BoardButton = () => {
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [cardName, setCardName] = useState<string>("")
     const [listId, setListId] = useState<string | undefined>()
+    const [token, setToken] = useState<string | undefined>()
 
     const { current: trello } = useRef(
         window.TrelloPowerUp?.iframe({
@@ -26,8 +28,24 @@ export const BoardButton = () => {
 
     const resize = (content: HTMLDivElement | null) => content?.scrollHeight && trello?.sizeTo(content.scrollHeight)
 
+    const authenticate = async () => {
+        setLoading(true)
+
+        try {
+            await trello?.getRestApi().authorize(Config.apiScope)
+            const newToken = await trello?.getRestApi().getToken()
+
+            if (newToken) {
+                setToken(newToken)
+            }
+        } catch (e) {
+            return
+        } finally {
+            setLoading(false)
+        }
+    }
+
     const mergeLists = async () => {
-        const token = await trello?.getRestApi().getToken()
         const client = window.Trello
 
         if (!trello || !token || !cardName || !listId || !client) {
@@ -58,6 +76,7 @@ export const BoardButton = () => {
 
             const cachedListId = await Storage(trello).get<string>(Config.keys.listMergeListId)
             const cachedCardName = await Storage(trello).get<string>(Config.keys.listMergeCardName)
+            const cachedToken = await trello?.getRestApi().getToken()
 
             if (cachedListId) {
                 setListId(cachedListId)
@@ -66,41 +85,35 @@ export const BoardButton = () => {
             if (cachedCardName) {
                 setCardName(cachedCardName)
             }
-        }
 
-        const authenticate = async () => {
-            setLoading(true)
-
-            let token = await trello?.getRestApi().getToken()
-
-            try {
-                if (!token) {
-                    await trello?.getRestApi().authorize(Config.apiScope)
-                    token = await trello?.getRestApi().getToken()
-                }
-            } catch (e) {
-                Errors.warn("Failed to authorise", e)
-                trello?.closePopup()
-                return
-            }
-
-            if (!token) {
-                Errors.warn("Token not available")
-                trello?.closePopup()
-                return
+            if (cachedToken) {
+                setToken(cachedToken)
             }
 
             setLoading(false)
         }
 
         loadCache().catch(Errors.warn)
-        authenticate().catch(Errors.warn)
     }, [trello])
 
     if (loading) {
         return (
             <LoadingWrapper ref={resize}>
                 <Loading />
+            </LoadingWrapper>
+        )
+    }
+
+    if (!token) {
+        return (
+            <LoadingWrapper ref={resize}>
+                <MergeListsIcon src={Config.images.mergeLists.logo} alt={Strings.defaultString("mergeLists")} />
+                <AuthorisationHint>
+                    <LocalisedString stringKey={"authorisationHint"} />
+                </AuthorisationHint>
+                <button className={"mod-primary"} onClick={authenticate}>
+                    <LocalisedString stringKey={"authorise"} />
+                </button>
             </LoadingWrapper>
         )
     }
@@ -121,7 +134,6 @@ export const BoardButton = () => {
 }
 
 const LoadingWrapper = styled.div`
-    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -129,16 +141,26 @@ const LoadingWrapper = styled.div`
 `
 
 const Wrapper = styled.div`
-    min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: stretch;
 `
 
 const ListSelector = styled(ListSelectorComponent)`
-    margin-bottom: 16px;
+    margin-bottom: ${Sizes.standard}px;
 `
 
 const CardNameInput = styled.input`
-    margin-bottom: 16px;
+    margin-bottom: ${Sizes.standard}px;
+`
+
+const AuthorisationHint = styled.p`
+    text-align: center;
+`
+
+const MergeListsIcon = styled.img`
+    height: ${Sizes.extraLarge}px;
+    width: ${Sizes.extraLarge}px;
+    margin-top: ${Sizes.standard}px;
+    margin-bottom: ${Sizes.standard}px;
 `

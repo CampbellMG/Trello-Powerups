@@ -1,9 +1,10 @@
-import { FunctionComponent, useEffect, useState } from "react"
+import { FunctionComponent, useState } from "react"
 import { TrelloIFrame } from "../types/trello"
 import { Strings } from "../res/Strings"
 import { Config } from "../res/Config"
 import { Errors } from "../util/Errors"
 import { LocalisedString } from "./LocalisedString"
+import { useMount, useMounted } from "../util/Hooks"
 
 type List = { id: string; name: string }
 
@@ -18,6 +19,7 @@ export const ListSelector: FunctionComponent<ListSelectorProps> = props => {
     const { trello, onSelected, selectedId } = props
     const [lists, setLists] = useState<List[]>([])
     const selectedList = lists.find(it => it.id === selectedId)
+    const mounted = useMounted()
 
     const changeList = async () => {
         if (!lists.length) {
@@ -36,13 +38,15 @@ export const ListSelector: FunctionComponent<ListSelectorProps> = props => {
         })
     }
 
-    useEffect(() => {
+    useMount(() => {
         const updateLists = async () => {
             const lists = (await trello?.lists("id", "name")) ?? []
             const allListName = await Strings.localise("allLists", trello)
             const allLists = [{ id: Config.ids.allLists, name: allListName }, ...lists]
 
-            setLists(allLists)
+            if (mounted()) {
+                setLists(allLists)
+            }
         }
 
         updateLists().catch(Errors.warn)

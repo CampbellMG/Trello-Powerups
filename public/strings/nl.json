@@ -1,7 +1,11 @@
 {
   "loading": "Bezig met laden",
   "sum": "Som",
-  "noDataError": "Geen geschikte aangepaste velden gevonden in",
+  "noDataError": "Geen geschikte aangepaste velden gevonden in geselecteerde lijst",
   "allLists": "Alle lijsten",
-  "selectAList": "Selecteer een lijst"
+  "selectAList": "Selecteer een lijst",
+  "field": "Veld",
+  "mergeLists": "Voeg lijsten samen",
+  "merge": "Samenvoegen",
+  "addACardName": "Voeg een kaartnaam toe..."
 }

@@ -1,7 +1,11 @@
 {
   "loading": "Wird geladen",
   "sum": "Summe",
-  "noDataError": "Keine passenden benutzerdefinierten Felder in gefunden",
+  "noDataError": "Keine geeigneten benutzerdefinierten Felder in der ausgewählten Liste gefunden",
   "allLists": "Alle Listen",
-  "selectAList": "Wählen Sie eine Liste aus"
+  "selectAList": "Wählen Sie eine Liste aus",
+  "field": "Bereich",
+  "mergeLists": "Merge-Listen",
+  "merge": "Verschmelzen",
+  "addACardName": "Fügen Sie einen Kartennamen hinzu..."
 }

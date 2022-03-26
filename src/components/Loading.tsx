@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components"
+import { Sizes } from "../res/Sizes"
 
 // Adapter from - https://github.com/tienpham94/react-awesome-spinners
 // Available under the MIT License
@@ -41,8 +42,8 @@ const motion3 = keyframes`
 const Wrapper = styled.div`
     display: inline-block;
     position: relative;
-    width: 64px;
-    height: 64px;
+    width: ${Sizes.extraLarge}px;
+    height: ${Sizes.extraLarge}px;
 
     div {
         position: absolute;

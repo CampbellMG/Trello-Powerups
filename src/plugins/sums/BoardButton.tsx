@@ -9,6 +9,7 @@ import { Errors } from "../../util/Errors"
 import { useMount } from "../../util/Hooks"
 import { Storage } from "../../data/Storage"
 import { Config } from "../../res/Config"
+import { Sizes } from "../../res/Sizes"
 
 const { localization } = Strings
 
@@ -95,7 +96,6 @@ export const BoardButton = () => {
 }
 
 const Wrapper = styled.div`
-    min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,7 +103,7 @@ const Wrapper = styled.div`
 `
 
 const ListSelector = styled(ListSelectorComponent)`
-    margin-bottom: 16px;
+    margin-bottom: ${Sizes.standard}px;
     align-self: stretch;
 `
 
@@ -117,7 +117,7 @@ const ErrorTextWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 16px;
+    margin: 0 ${Sizes.standard}px;
 `
 
 const ErrorText = styled.p`

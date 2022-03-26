@@ -1,7 +1,11 @@
 {
   "loading": "Betöltés",
   "sum": "Összeg",
-  "noDataError": "Nincs megfelelő egyéni mezők",
+  "noDataError": "Nincs megfelelő egyéni mezők a kiválasztott listában",
   "allLists": "Minden listát",
-  "selectAList": "Válasszon ki egy listát"
+  "selectAList": "Válasszon ki egy listát",
+  "field": "Terület",
+  "mergeLists": "Merge listák",
+  "merge": "Összeolvad",
+  "addACardName": "Kártya neve hozzáadása..."
 }

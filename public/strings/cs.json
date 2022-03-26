@@ -1,7 +1,11 @@
 {
   "loading": "načítání",
   "sum": "Součet",
-  "noDataError": "Nebyly nalezena vhodná vlastní pole",
+  "noDataError": "Ve vybraném seznamu nalezena žádná vhodná vlastní pole",
   "allLists": "Všechny seznamy",
-  "selectAList": "Vyberte seznam"
+  "selectAList": "Vyberte seznam",
+  "field": "Pole",
+  "mergeLists": "Sloučit seznamy",
+  "merge": "Spojit",
+  "addACardName": "Přidat název karty..."
 }
