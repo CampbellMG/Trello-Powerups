@@ -40,6 +40,7 @@ export const Config = {
             }
         },
         mergeLists: {
+            logo: `${origin}/img/icon144-merge-lists.png`,
             icon: {
                 light: `${origin}/img/icon-merge-lists-dark.svg`,
                 dark: `${origin}/img/icon-merge-lists-light.svg`

@@ -1,10 +1,31 @@
-import { BoardButtonCapability } from "./BoardButtonCapability"
 import { useMount } from "../../util/Hooks"
 import { Strings } from "../../res/Strings"
-import { RemoveDataCapability } from "./RemoveDataCapability"
 import { Config } from "../../res/Config"
+import { TrelloIFrame } from "../../types/trello"
+import { Storage } from "../../data/Storage"
 
 const { localization } = Strings
+
+const showMergeListsComponent = async (callbackTrello: TrelloIFrame) =>
+    callbackTrello.popup({
+        title: await Strings.localise("mergeLists", callbackTrello),
+        url: "/merge-lists/board-button"
+    })
+
+const boardButtonCapability = async (trello: TrelloIFrame) => [
+    {
+        ...Config.images.mergeLists,
+        text: await Strings.localise("mergeLists", trello),
+        callback: showMergeListsComponent
+    }
+]
+
+const removeDataCapability = (trello: TrelloIFrame) =>
+    Promise.all([Storage(trello).remove(Config.keys.sumListId), trello.getRestApi().clearToken()])
+
+const authorisationStatusCapability = async (trello: TrelloIFrame) => ({
+    authorized: await trello.getRestApi().isAuthorized()
+})
 
 export const MergeLists = () => {
     useMount(() => {
@@ -12,8 +33,10 @@ export const MergeLists = () => {
 
         trello?.initialize(
             {
-                "board-buttons": BoardButtonCapability,
-                "remove-data": RemoveDataCapability
+                "authorization-status": authorisationStatusCapability,
+                "show-authorization": showMergeListsComponent,
+                "board-buttons": boardButtonCapability,
+                "remove-data": removeDataCapability
             },
             {
                 localization,

@@ -96,7 +96,6 @@ export const BoardButton = () => {
 }
 
 const Wrapper = styled.div`
-    min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
