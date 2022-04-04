@@ -46,7 +46,7 @@ export const Config = {
         github: `${origin}/img/icon512-github.png`,
         sums: {
             logo: `${origin}/img/icon144-sum.png`,
-            demo: `${origin}/img/demo-sum.png`,
+            demo: `${origin}/img/demo-sum.gif`,
             icon: {
                 light: `${origin}/img/icon-sum-dark.svg`,
                 dark: `${origin}/img/icon-sum-light.svg`
