@@ -7,5 +7,7 @@
   "field": "Fält",
   "mergeLists": "Sammanfoga listor",
   "merge": "Sammanfoga",
-  "addACardName": "Lägg till ett kortnamn..."
+  "addACardName": "Lägg till ett kortnamn...",
+  "authorisationHint": "För att läsa checklistor och skapa kort på din bräda måste vi ansluta ditt konto. Denna uppstart kommer aldrig att skicka dina data utanför Trello....",
+  "doNotCloseWarning": "Att stänga eller klicka utanför den här popupen avbryter den här sammanslagningen..."
 }

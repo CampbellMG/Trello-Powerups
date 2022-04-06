@@ -7,5 +7,7 @@
   "field": "Campo",
   "mergeLists": "Merge lists.",
   "merge": "Unire",
-  "addACardName": "Aggiungi un nome di carta..."
+  "addACardName": "Aggiungi un nome di carta...",
+  "authorisationHint": "Per leggere liste di controllo e creare carte sulla tua scheda, dobbiamo collegare il tuo account. Questo accensione non invierà mai i tuoi dati al di fuori di Trello....",
+  "doNotCloseWarning": "Chiusura o cliccando al di fuori di questo pop-up annullerà questa unione..."
 }

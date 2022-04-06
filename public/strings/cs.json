@@ -7,5 +7,7 @@
   "field": "Pole",
   "mergeLists": "Sloučit seznamy",
   "merge": "Spojit",
-  "addACardName": "Přidat název karty..."
+  "addACardName": "Přidat název karty...",
+  "authorisationHint": "Chcete-li číst kontrolní seznamy a vytvářet karty na své desce, musíme svůj účet připojit. Toto zapnutí nikdy neposílá data mimo Trello....",
+  "doNotCloseWarning": "Uzavření nebo klepnutím mimo tuto vyskakovací okno zruší tuto sloučení..."
 }

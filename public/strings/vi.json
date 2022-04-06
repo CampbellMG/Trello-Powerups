@@ -7,5 +7,7 @@
   "field": "Đồng ruộng",
   "mergeLists": "Danh sách hợp nhất",
   "merge": "Hợp nhất.",
-  "addACardName": "Thêm tên thẻ..."
+  "addACardName": "Thêm tên thẻ...",
+  "authorisationHint": "Để đọc danh sách kiểm tra và tạo thẻ trên bảng của bạn, chúng tôi cần kết nối tài khoản của mình. Tăng sức mạnh này sẽ không bao giờ gửi dữ liệu của bạn bên ngoài Trello....",
+  "doNotCloseWarning": "Đóng hoặc nhấp vào bên ngoài cửa sổ bật lên này sẽ hủy hợp nhất này..."
 }

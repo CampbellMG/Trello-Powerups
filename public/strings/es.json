@@ -7,5 +7,7 @@
   "field": "Campo",
   "mergeLists": "Listas de fusión",
   "merge": "Unir",
-  "addACardName": "Añadir un nombre de tarjeta..."
+  "addACardName": "Añadir un nombre de tarjeta...",
+  "authorisationHint": "Para leer listas de verificación y crear tarjetas en su tabla, necesitamos conectar su cuenta. Este encendido nunca enviará sus datos fuera de Trello....",
+  "doNotCloseWarning": "Cerrar o hacer clic en Fuera de esta ventana emergente cancelará esta fusión...."
 }

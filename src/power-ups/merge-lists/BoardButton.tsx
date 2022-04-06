@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { useEffect, useRef, useState } from "react"
 import { Config } from "../../res/Config"
-import { Strings } from "../../res/Strings"
+import { StringKey, Strings } from "../../res/Strings"
 import { Errors } from "../../util/Errors"
 import { ListSelector as ListSelectorComponent } from "../../components/ListSelector"
 import { Loading } from "../../components/Loading"
@@ -12,8 +12,13 @@ import { Sizes } from "../../res/Sizes"
 
 const { localization } = Strings
 
+type LoadingState = {
+    loading: boolean
+    message?: StringKey
+}
+
 export const BoardButton = () => {
-    const [loading, setLoading] = useState(true)
+    const [loadingState, setLoading] = useState<LoadingState>({ loading: false })
     const [cardName, setCardName] = useState<string>("")
     const [listId, setListId] = useState<string | undefined>()
     const [token, setToken] = useState<string | undefined>()
@@ -29,7 +34,7 @@ export const BoardButton = () => {
     const resize = (content: HTMLDivElement | null) => content?.scrollHeight && trello?.sizeTo(content.scrollHeight)
 
     const authenticate = async () => {
-        setLoading(true)
+        setLoading({ loading: true })
 
         try {
             await trello?.getRestApi().authorize(Config.apiScope)
@@ -41,7 +46,7 @@ export const BoardButton = () => {
         } catch (e) {
             return
         } finally {
-            setLoading(false)
+            setLoading({ loading: false })
         }
     }
 
@@ -55,7 +60,7 @@ export const BoardButton = () => {
         const storage = Storage(trello)
 
         try {
-            setLoading(true)
+            setLoading({ loading: true, message: "doNotCloseWarning" })
 
             await storage.set(Config.keys.listMergeListId, listId)
             await storage.set(Config.keys.listMergeCardName, cardName)
@@ -90,16 +95,23 @@ export const BoardButton = () => {
                 setToken(cachedToken)
             }
 
-            setLoading(false)
+            setLoading({ loading: false })
         }
 
         loadCache().catch(Errors.warn)
     }, [trello])
 
-    if (loading) {
+    if (loadingState.loading) {
+        const loadingMessage = !loadingState.message ? undefined : (
+            <LoadingMessage>
+                <LocalisedString stringKey={loadingState.message} />
+            </LoadingMessage>
+        )
+
         return (
             <LoadingWrapper ref={resize}>
                 <Loading />
+                {loadingMessage}
             </LoadingWrapper>
         )
     }
@@ -138,6 +150,10 @@ const LoadingWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+`
+
+const LoadingMessage = styled.p`
+    text-align: center;
 `
 
 const Wrapper = styled.div`

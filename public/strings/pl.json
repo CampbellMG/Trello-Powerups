@@ -7,5 +7,7 @@
   "field": "Pole",
   "mergeLists": "Merge Lists.",
   "merge": "Łączyć",
-  "addACardName": "Dodaj nazwę karty..."
+  "addACardName": "Dodaj nazwę karty...",
+  "authorisationHint": "Aby odczytać listy kontrolne i tworzyć karty na tablicy, musimy podłączyć swoje konto. Ten zasilanie nigdy nie wysyła danych poza Trello....",
+  "doNotCloseWarning": "Zamknięcie lub klikanie poza tym wyskakującym się anuluje ten scal..."
 }

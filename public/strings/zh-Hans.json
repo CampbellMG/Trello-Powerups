@@ -7,5 +7,7 @@
   "field": "场地",
   "mergeLists": "合并列表",
   "merge": "合并",
-  "addACardName": "添加卡名称..."
+  "addACardName": "添加卡名称...",
+  "authorisationHint": "阅读清单并在电路板上创建卡，我们需要连接您的帐户。此上电将永远不会将您的数据发送到Trello之外。...",
+  "doNotCloseWarning": "关闭或单击此弹出窗口外将取消此合并..."
 }
