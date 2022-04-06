@@ -7,5 +7,7 @@
   "field": "Alan",
   "mergeLists": "Listeleri birleştirmek",
   "merge": "Birleştirmek",
-  "addACardName": "Bir kart adı ekle..."
+  "addACardName": "Bir kart adı ekle...",
+  "authorisationHint": "Kontrol listelerini okumak ve kartınıza kartlar oluşturmak için hesabınızı bağlamamız gerekir. Bu güçlendirme, verilerinizi asla Trello dışında göndermez....",
+  "doNotCloseWarning": "Bu açılır pencerenin dışına kapanması veya tıklanması bu birleşmeyi iptal eder..."
 }

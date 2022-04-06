@@ -7,5 +7,7 @@
   "field": "Terület",
   "mergeLists": "Merge listák",
   "merge": "Összeolvad",
-  "addACardName": "Kártya neve hozzáadása..."
+  "addACardName": "Kártya neve hozzáadása...",
+  "authorisationHint": "Az ellenőrző listák olvasása és kártyák létrehozása a táblán, csatlakoztatni kell fiókját. Ez a bekapcsolás soha nem fogja elküldeni az adatokat a Trello-n kívül....",
+  "doNotCloseWarning": "A felugró ablakon kívüli zárás vagy kattintás törli ezt az összevont..."
 }

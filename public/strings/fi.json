@@ -7,5 +7,7 @@
   "field": "Ala",
   "mergeLists": "Yhdistä luettelot",
   "merge": "Yhdistää",
-  "addACardName": "Lisää kortin nimi..."
+  "addACardName": "Lisää kortin nimi...",
+  "authorisationHint": "Voit lukea tarkistuslistoja ja luoda kortteja hallituksellesi meidän on liitettävä tilisi. Tämä virtalähde ei koskaan lähetä tietoja Trellon ulkopuolelle....",
+  "doNotCloseWarning": "Tämän ponnahdusikkunan sulkeminen tai napsauttaminen peruuttaa tämän sulautumisen..."
 }

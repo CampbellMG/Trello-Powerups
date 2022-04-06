@@ -7,5 +7,7 @@
   "field": "Veld",
   "mergeLists": "Voeg lijsten samen",
   "merge": "Samenvoegen",
-  "addACardName": "Voeg een kaartnaam toe..."
+  "addACardName": "Voeg een kaartnaam toe...",
+  "authorisationHint": "Om checklists te lezen en kaarten op uw boord te maken, moeten we uw account aansluiten. Deze power-up zal uw gegevens nooit buiten Tello sturen....",
+  "doNotCloseWarning": "Sluiten of klikken buiten deze pop-up annuleert deze samenvoeging..."
 }

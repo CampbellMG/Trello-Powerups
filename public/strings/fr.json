@@ -7,5 +7,7 @@
   "field": "Champ",
   "mergeLists": "Listes de fusion",
   "merge": "Fusionner",
-  "addACardName": "Ajouter un nom de carte..."
+  "addACardName": "Ajouter un nom de carte...",
+  "authorisationHint": "Pour lire les checklists et créer des cartes sur votre carte, nous devons connecter votre compte. Cette mise sous tension n'enverra jamais vos données en dehors de Trello....",
+  "doNotCloseWarning": "Fermer ou cliquer à l'extérieur de cette fenêtre contextuelle annulera cette fusion..."
 }

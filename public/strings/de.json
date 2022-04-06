@@ -7,5 +7,7 @@
   "field": "Bereich",
   "mergeLists": "Merge-Listen",
   "merge": "Verschmelzen",
-  "addACardName": "Fügen Sie einen Kartennamen hinzu..."
+  "addACardName": "Fügen Sie einen Kartennamen hinzu...",
+  "authorisationHint": "Um Checklisten zu lesen und Karten auf Ihrem Board zu erstellen, müssen Sie Ihr Konto anschließen. Dieses Einschalten sendet niemals Ihre Daten außerhalb von TRELLO....",
+  "doNotCloseWarning": "Das Schließen oder Klicken außerhalb dieses Popups wird diese Verschmelzung stornieren..."
 }
