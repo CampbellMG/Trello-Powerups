@@ -5,7 +5,7 @@
   "allLists": "Minden listát",
   "selectAList": "Válasszon ki egy listát",
   "field": "Terület",
-  "mergeLists": "Merge listák",
+  "mergeChecklists": "Merge ellenőrző listák",
   "merge": "Összeolvad",
   "addACardName": "Kártya neve hozzáadása...",
   "authorisationHint": "Az ellenőrző listák olvasása és kártyák létrehozása a táblán, csatlakoztatni kell fiókját. Ez a bekapcsolás soha nem fogja elküldeni az adatokat a Trello-n kívül....",

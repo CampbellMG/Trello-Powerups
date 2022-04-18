@@ -8,16 +8,16 @@ const sumListId: StorageKey = {
     key: "sum-list-id"
 }
 
-const listMergeListId: StorageKey = {
+const checklistMergeListId: StorageKey = {
     scope: "board",
     visibility: "private",
-    key: "list-merge-list-id"
+    key: "checklist-merge-list-id"
 }
 
-const listMergeCardName: StorageKey = {
+const checklistMergeCardName: StorageKey = {
     scope: "board",
     visibility: "private",
-    key: "list-merge-card-name"
+    key: "checklist-merge-card-name"
 }
 
 export const Config = {
@@ -32,11 +32,11 @@ export const Config = {
     },
     keys: {
         sumListId,
-        listMergeListId,
-        listMergeCardName
+        checklistMergeListId,
+        checklistMergeCardName
     },
     routes: {
-        mergeLists: "/merge-lists",
+        mergeChecklists: "/merge-checklists",
         sums: "/sums",
         boardButton: "/board-button",
         privacy: "/privacy"
@@ -52,12 +52,12 @@ export const Config = {
                 dark: `${origin}/img/icon-sum-light.svg`
             }
         },
-        mergeLists: {
-            logo: `${origin}/img/icon144-merge-lists.png`,
-            demo: `${origin}/img/demo-merge-lists.gif`,
+        mergeChecklists: {
+            logo: `${origin}/img/icon144-merge-checklists.png`,
+            demo: `${origin}/img/demo-merge-checklists.gif`,
             icon: {
-                light: `${origin}/img/icon-merge-lists-dark.svg`,
-                dark: `${origin}/img/icon-merge-lists-light.svg`
+                light: `${origin}/img/icon-merge-checklists-dark.svg`,
+                dark: `${origin}/img/icon-merge-checklists-light.svg`
             }
         }
     }

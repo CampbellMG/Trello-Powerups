@@ -11,7 +11,7 @@ const strings = {
     allLists: "All Lists",
     selectAList: "Select a List",
     field: "Field",
-    mergeLists: "Merge Lists",
+    mergeChecklists: "Merge Checklists",
     merge: "Merge",
     addACardName: "Add a card name...",
     authorise: "Authorise",

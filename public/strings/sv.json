@@ -5,7 +5,7 @@
   "allLists": "Alla listor",
   "selectAList": "Välj en lista",
   "field": "Fält",
-  "mergeLists": "Sammanfoga listor",
+  "mergeChecklists": "Sammanfoga checklistor",
   "merge": "Sammanfoga",
   "addACardName": "Lägg till ett kortnamn...",
   "authorisationHint": "För att läsa checklistor och skapa kort på din bräda måste vi ansluta ditt konto. Denna uppstart kommer aldrig att skicka dina data utanför Trello....",

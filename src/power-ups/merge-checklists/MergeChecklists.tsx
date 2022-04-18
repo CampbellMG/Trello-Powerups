@@ -8,19 +8,19 @@ import { Sizes } from "../../res/Sizes"
 import { GlobalPageStyles } from "../../util/GlobalPageStyles"
 
 const { localization } = Strings
-const { mergeLists, boardButton } = Config.routes
+const { mergeChecklists, boardButton } = Config.routes
 
-const showMergeListsComponent = async (callbackTrello: TrelloIFrame) =>
+const showMergeChecklistsComponent = async (callbackTrello: TrelloIFrame) =>
     callbackTrello.popup({
-        title: await Strings.localise("mergeLists", callbackTrello),
-        url: mergeLists + boardButton
+        title: await Strings.localise("mergeChecklists", callbackTrello),
+        url: mergeChecklists + boardButton
     })
 
 const boardButtonCapability = async (trello: TrelloIFrame) => [
     {
-        ...Config.images.mergeLists,
-        text: await Strings.localise("mergeLists", trello),
-        callback: showMergeListsComponent
+        ...Config.images.mergeChecklists,
+        text: await Strings.localise("mergeChecklists", trello),
+        callback: showMergeChecklistsComponent
     }
 ]
 
@@ -31,20 +31,20 @@ const authorisationStatusCapability = async (trello: TrelloIFrame) => ({
     authorized: await trello.getRestApi().isAuthorized()
 })
 
-export const MergeLists = () => {
+export const MergeChecklists = () => {
     useMount(() => {
         const trello = window.TrelloPowerUp
 
         trello?.initialize(
             {
                 "authorization-status": authorisationStatusCapability,
-                "show-authorization": showMergeListsComponent,
+                "show-authorization": showMergeChecklistsComponent,
                 "board-buttons": boardButtonCapability,
                 "remove-data": removeDataCapability
             },
             {
                 localization,
-                appName: Strings.defaultString("mergeLists"),
+                appName: Strings.defaultString("mergeChecklists"),
                 appKey: Config.apiKey
             }
         )
@@ -58,8 +58,8 @@ export const MergeLists = () => {
         <>
             <GlobalPageStyles />
             <Wrapper>
-                <img src={Config.images.mergeLists.logo} alt={"Merge lists power-up icon"} />
-                <Title>Merge Lists</Title>
+                <img src={Config.images.mergeChecklists.logo} alt={"Merge checklists power-up icon"} />
+                <Title>Merge Checklists</Title>
                 <p>
                     This power-up combines checklists from cards in a specific list (or your entire board) into a single
                     checklist. For example, in the demo below we have three cards each with a checklist. With this
@@ -74,7 +74,7 @@ export const MergeLists = () => {
                     wouldn't normally see this page. If you'd like to take a look at what's going on under the hood,
                     take a look at the repo here: <RepoLink href={Config.repo}>{Config.repo}</RepoLink>
                 </p>
-                <DemoImage src={Config.images.mergeLists.demo} alt={"Merge lists power-up demo video"} />
+                <DemoImage src={Config.images.mergeChecklists.demo} alt={"Merge checklists power-up demo video"} />
             </Wrapper>
         </>
     )
@@ -106,6 +106,7 @@ const DemoImage = styled.img`
     border-radius: ${Sizes.standard}px;
     box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
     margin-top: ${Sizes.extraLarge}px;
+    margin-bottom: ${Sizes.extraLarge}px;
 `
 
 const RepoLink = styled.a`
