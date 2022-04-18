@@ -5,7 +5,7 @@
   "allLists": "Tutti gli elenchi",
   "selectAList": "Seleziona un elenco",
   "field": "Campo",
-  "mergeLists": "Merge lists.",
+  "mergeChecklists": "Merge Checklists.",
   "merge": "Unire",
   "addACardName": "Aggiungi un nome di carta...",
   "authorisationHint": "Per leggere liste di controllo e creare carte sulla tua scheda, dobbiamo collegare il tuo account. Questo accensione non invierà mai i tuoi dati al di fuori di Trello....",

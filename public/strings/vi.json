@@ -5,7 +5,7 @@
   "allLists": "Tất cả các danh sách",
   "selectAList": "Chọn một danh sách",
   "field": "Đồng ruộng",
-  "mergeLists": "Danh sách hợp nhất",
+  "mergeChecklists": "Hợp nhất danh sách kiểm tra.",
   "merge": "Hợp nhất.",
   "addACardName": "Thêm tên thẻ...",
   "authorisationHint": "Để đọc danh sách kiểm tra và tạo thẻ trên bảng của bạn, chúng tôi cần kết nối tài khoản của mình. Tăng sức mạnh này sẽ không bao giờ gửi dữ liệu của bạn bên ngoài Trello....",

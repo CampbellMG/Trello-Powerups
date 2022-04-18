@@ -50,10 +50,10 @@ export const Index = () => (
                     </LocalLink>
                 </li>
                 <li>
-                    <LocalLink to={Config.routes.mergeLists}>
-                        <PowerUpIcon src={Config.images.mergeLists.logo} alt={"Merge lists power-up icon"} />
+                    <LocalLink to={Config.routes.mergeChecklists}>
+                        <PowerUpIcon src={Config.images.mergeChecklists.logo} alt={"Merge checklists power-up icon"} />
                         <div>
-                            <PowerUpHeading>Merge Lists</PowerUpHeading>
+                            <PowerUpHeading>Merge Checklists</PowerUpHeading>
                             <p>
                                 This power-up combines checklists from cards in a specific list (or your entire board)
                                 into a single checklist. This one is a bit more complicated and requires the user to

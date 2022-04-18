@@ -11,11 +11,11 @@ export const Privacy = () => (
             Trello.
         </p>
         <p>
-            Some power-ups (such as the Merge Lists power-up) may request you to authorise the power-up on your behalf.
-            This is necessary for the power-up to access board data such as checklists or add new data such as cards. A
-            power-up will never modify a board without your request or access board data without your knowledge. If you
-            would like to revoke a your authorisation you can do so by selecting the "Remove personal settings" button
-            in the power-up's settings.
+            Some power-ups (such as the Merge Checklists power-up) may request you to authorise the power-up on your
+            behalf. This is necessary for the power-up to access board data such as checklists or add new data such as
+            cards. A power-up will never modify a board without your request or access board data without your
+            knowledge. If you would like to revoke a your authorisation you can do so by selecting the "Remove personal
+            settings" button in the power-up's settings.
         </p>
         <p>
             If you would like to have a look at what's going on behind the scenes you can find the source code for all

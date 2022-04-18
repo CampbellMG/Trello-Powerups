@@ -5,7 +5,7 @@
   "allLists": "Kaikki luettelot",
   "selectAList": "Valitse luettelo",
   "field": "Ala",
-  "mergeLists": "Yhdistä luettelot",
+  "mergeChecklists": "Yhdistä tarkistuslistat",
   "merge": "Yhdistää",
   "addACardName": "Lisää kortin nimi...",
   "authorisationHint": "Voit lukea tarkistuslistoja ja luoda kortteja hallituksellesi meidän on liitettävä tilisi. Tämä virtalähde ei koskaan lähetä tietoja Trellon ulkopuolelle....",

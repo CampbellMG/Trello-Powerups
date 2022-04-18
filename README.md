@@ -6,17 +6,17 @@ This project is a container for several Trello power-ups. Each power-up is loade
  - [REST API Client](https://developer.atlassian.com/cloud/trello/guides/client-js/getting-started-with-client-js/)
 
 # Power-ups
-At the moment, there are two power-ups contained within this app: Sums & Merge Lists. 
+At the moment, there are two power-ups contained within this app: Sums & Merge Checklists. 
 
 ## Sums
 The sums power-up provides users with a method for summing the number-based custom field values from a specific list or the entire board. This one is useful for things like time tracking, costs or points. The power-up's implementation is very simple as we can access and process all data using the power-up client.
 
 ![Sums power-up screenshot](./public/img/demo-sum.gif)
 
-## Merge Lists
-The merge lists power-up provides a board button that allows users to combine checklists from a specific card list or the entire board. I've found this power-up very useful for creating grocery lists. You can see a demonstration below where we are merging three cards together. This power-up requires authorisation to use the REST API on behalf of the user as we cannot access checklists or create cards from the base power-up client. As we need to manage authorisation this power-up uses several of the standard authorisation capabilities such as: `remove-data`, `authorization-status` & `show-authorization`.
+## Merge Checklists
+The merge checklists power-up provides a board button that allows users to combine checklists from a specific card list or the entire board. I've found this power-up very useful for creating grocery lists. You can see a demonstration below where we are merging three cards together. This power-up requires authorisation to use the REST API on behalf of the user as we cannot access checklists or create cards from the base power-up client. As we need to manage authorisation this power-up uses several of the standard authorisation capabilities such as: `remove-data`, `authorization-status` & `show-authorization`.
 
-![Merge list power-up demo video](./public/img/demo-merge-lists.gif)
+![Merge checklist power-up demo video](./public/img/demo-merge-checklists.gif)
 
 # Development
 I am open to any PR's if you'd like to improve a core functionality or fix any issues you've found. However, I would like to keep both power-ups as lean as possible so if you've found a use case that these don't quite fit we could consider a new power-up entirely. 

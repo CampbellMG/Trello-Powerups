@@ -5,7 +5,7 @@
   "allLists": "Wszystkie listy",
   "selectAList": "Wybierz listę",
   "field": "Pole",
-  "mergeLists": "Merge Lists.",
+  "mergeChecklists": "Scal Listy kontrolne.",
   "merge": "Łączyć",
   "addACardName": "Dodaj nazwę karty...",
   "authorisationHint": "Aby odczytać listy kontrolne i tworzyć karty na tablicy, musimy podłączyć swoje konto. Ten zasilanie nigdy nie wysyła danych poza Trello....",
