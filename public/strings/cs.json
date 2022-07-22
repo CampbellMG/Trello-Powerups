@@ -5,7 +5,7 @@
   "allLists": "Všechny seznamy",
   "selectAList": "Vyberte seznam",
   "field": "Pole",
-  "mergeLists": "Sloučit seznamy",
+  "mergeChecklists": "Sloučit kontrolní seznamy",
   "merge": "Spojit",
   "addACardName": "Přidat název karty...",
   "authorisationHint": "Chcete-li číst kontrolní seznamy a vytvářet karty na své desce, musíme svůj účet připojit. Toto zapnutí nikdy neposílá data mimo Trello....",

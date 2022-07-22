@@ -26,7 +26,7 @@ export const BoardButton = () => {
     const { current: trello } = useRef(
         window.TrelloPowerUp?.iframe({
             localization,
-            appName: Strings.defaultString("mergeLists"),
+            appName: Strings.defaultString("mergeChecklists"),
             appKey: Config.apiKey
         })
     )
@@ -50,7 +50,7 @@ export const BoardButton = () => {
         }
     }
 
-    const mergeLists = async () => {
+    const mergeChecklists = async () => {
         const client = window.Trello
 
         if (!trello || !token || !cardName || !listId || !client) {
@@ -62,8 +62,8 @@ export const BoardButton = () => {
         try {
             setLoading({ loading: true, message: "doNotCloseWarning" })
 
-            await storage.set(Config.keys.listMergeListId, listId)
-            await storage.set(Config.keys.listMergeCardName, cardName)
+            await storage.set(Config.keys.checklistMergeListId, listId)
+            await storage.set(Config.keys.checklistMergeCardName, cardName)
 
             await API(token, client).mergeChecklists(listId, cardName)
         } catch (e) {
@@ -79,8 +79,8 @@ export const BoardButton = () => {
                 return
             }
 
-            const cachedListId = await Storage(trello).get<string>(Config.keys.listMergeListId)
-            const cachedCardName = await Storage(trello).get<string>(Config.keys.listMergeCardName)
+            const cachedListId = await Storage(trello).get<string>(Config.keys.checklistMergeListId)
+            const cachedCardName = await Storage(trello).get<string>(Config.keys.checklistMergeCardName)
             const cachedToken = await trello?.getRestApi().getToken()
 
             if (cachedListId) {
@@ -119,7 +119,10 @@ export const BoardButton = () => {
     if (!token) {
         return (
             <LoadingWrapper ref={resize}>
-                <MergeListsIcon src={Config.images.mergeLists.logo} alt={Strings.defaultString("mergeLists")} />
+                <MergeChecklistsIcon
+                    src={Config.images.mergeChecklists.logo}
+                    alt={Strings.defaultString("mergeChecklists")}
+                />
                 <AuthorisationHint>
                     <LocalisedString stringKey={"authorisationHint"} />
                 </AuthorisationHint>
@@ -138,8 +141,8 @@ export const BoardButton = () => {
                 onChange={event => setCardName(event.target.value)}
                 placeholder={Strings.defaultString("addACardName")}
             />
-            <button className={"mod-primary"} onClick={mergeLists} disabled={!listId || !cardName}>
-                <LocalisedString stringKey={"mergeLists"} />
+            <button className={"mod-primary"} onClick={mergeChecklists} disabled={!listId || !cardName}>
+                <LocalisedString stringKey={"mergeChecklists"} />
             </button>
         </Wrapper>
     )
@@ -174,7 +177,7 @@ const AuthorisationHint = styled.p`
     text-align: center;
 `
 
-const MergeListsIcon = styled.img`
+const MergeChecklistsIcon = styled.img`
     height: ${Sizes.extraLarge}px;
     width: ${Sizes.extraLarge}px;
     margin-top: ${Sizes.standard}px;

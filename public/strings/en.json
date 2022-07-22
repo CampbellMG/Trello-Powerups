@@ -5,7 +5,7 @@
   "allLists": "All Lists",
   "selectAList": "Select a List",
   "field": "Field",
-  "mergeLists": "Merge Lists",
+  "mergeChecklists": "Merge Checklists",
   "merge": "Merge",
   "addACardName": "Add a card name...",
   "authorisationHint": "To read checklists and create cards on your board we need to connect your account. This power-up will never send your data outside of Trello....",
