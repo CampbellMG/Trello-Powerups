@@ -6,7 +6,9 @@ This project is a container for several Trello power-ups. Each power-up is loade
  - [REST API Client](https://developer.atlassian.com/cloud/trello/guides/client-js/getting-started-with-client-js/)
 
 # Power-ups
-At the moment, there are two power-ups contained within this app: Sums & Merge Checklists. 
+At the moment, there are two power-ups contained within this app: 
+1. [Sums](https://trello.com/power-ups/623c167833115f47241fd578)
+2. [Merge Checklists](https://trello.com/power-ups/623dc8998e4ab64803fcde72)
 
 ## Sums
 The sums power-up provides users with a method for summing the number-based custom field values from a specific list or the entire board. This one is useful for things like time tracking, costs or points. The power-up's implementation is very simple as we can access and process all data using the power-up client.
