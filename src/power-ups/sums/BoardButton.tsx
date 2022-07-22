@@ -71,7 +71,7 @@ export const BoardButton = () => {
                     {Object.values(sumState.data ?? []).map(it => (
                         <tr key={it.id}>
                             <td>{it.name}</td>
-                            <td>{it.sum}</td>
+                            <td>{it.sum.toLocaleString()}</td>
                         </tr>
                     ))}
                 </tbody>
