@@ -9,6 +9,7 @@ import { API } from "../../data/API"
 import { LocalisedString } from "../../components/LocalisedString"
 import { Storage } from "../../data/Storage"
 import { Sizes } from "../../res/Sizes"
+import { SortSelector as SortSelectorComponent } from "../../components/SortSelector"
 
 const { localization } = Strings
 
@@ -21,6 +22,7 @@ export const BoardButton = () => {
     const [loadingState, setLoading] = useState<LoadingState>({ loading: false })
     const [cardName, setCardName] = useState<string>("")
     const [listId, setListId] = useState<string | undefined>()
+    const [sortId, setSortId] = useState<string | undefined>()
     const [token, setToken] = useState<string | undefined>()
 
     const { current: trello } = useRef(
@@ -50,6 +52,18 @@ export const BoardButton = () => {
         }
     }
 
+    function getSortPreference() {
+        if (sortId === Config.ids.ascAlphabetical) {
+            return "asc"
+        }
+
+        if (sortId === Config.ids.descAlphabetical) {
+            return "desc"
+        }
+
+        return "original"
+    }
+
     const mergeChecklists = async () => {
         const client = window.Trello
 
@@ -64,8 +78,9 @@ export const BoardButton = () => {
 
             await storage.set(Config.keys.checklistMergeListId, listId)
             await storage.set(Config.keys.checklistMergeCardName, cardName)
+            await storage.set(Config.keys.checklistMergeSortPreference, sortId)
 
-            await API(token, client).mergeChecklists(listId, cardName)
+            await API(token, client).mergeChecklists(listId, getSortPreference(), cardName)
         } catch (e) {
             Errors.error(e as Error)
         } finally {
@@ -81,6 +96,7 @@ export const BoardButton = () => {
 
             const cachedListId = await Storage(trello).get<string>(Config.keys.checklistMergeListId)
             const cachedCardName = await Storage(trello).get<string>(Config.keys.checklistMergeCardName)
+            const cachedSortOrder = await Storage(trello).get<string>(Config.keys.checklistMergeSortPreference)
             const cachedToken = await trello?.getRestApi().getToken()
 
             if (cachedListId) {
@@ -93,6 +109,10 @@ export const BoardButton = () => {
 
             if (cachedToken) {
                 setToken(cachedToken)
+            }
+
+            if (cachedSortOrder) {
+                setSortId(cachedSortOrder)
             }
 
             setLoading({ loading: false })
@@ -136,6 +156,7 @@ export const BoardButton = () => {
     return (
         <Wrapper ref={resize}>
             <ListSelector trello={trello} selectedId={listId} onSelected={setListId} />
+            <SortSelector trello={trello} selectedId={sortId} onSelected={setSortId} />
             <CardNameInput
                 value={cardName}
                 onChange={event => setCardName(event.target.value)}
@@ -166,6 +187,10 @@ const Wrapper = styled.div`
 `
 
 const ListSelector = styled(ListSelectorComponent)`
+    margin-bottom: ${Sizes.small}px;
+`
+
+const SortSelector = styled(SortSelectorComponent)`
     margin-bottom: ${Sizes.standard}px;
 `
 

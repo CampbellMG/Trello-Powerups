@@ -3,8 +3,8 @@ import { TrelloIFrame } from "../types/trello"
 import { Strings } from "../res/Strings"
 import { Config } from "../res/Config"
 import { Errors } from "../util/Errors"
-import { LocalisedString } from "./LocalisedString"
 import { useMount, useMounted } from "../util/Hooks"
+import { Selector } from "./Selector"
 
 type List = { id: string; name: string }
 
@@ -16,27 +16,9 @@ type ListSelectorProps = {
 }
 
 export const ListSelector: FunctionComponent<ListSelectorProps> = props => {
-    const { trello, onSelected, selectedId } = props
+    const { trello } = props
     const [lists, setLists] = useState<List[]>([])
-    const selectedList = lists.find(it => it.id === selectedId)
     const mounted = useMounted()
-
-    const changeList = async () => {
-        if (!lists.length) {
-            return
-        }
-
-        return trello?.popup({
-            title: await Strings.localise("selectAList", trello),
-            items: lists.map(list => ({
-                text: list.name,
-                callback: async callbackTrello => {
-                    onSelected(list.id)
-                    await callbackTrello.back()
-                }
-            }))
-        })
-    }
 
     useMount(() => {
         const updateLists = async () => {
@@ -52,9 +34,5 @@ export const ListSelector: FunctionComponent<ListSelectorProps> = props => {
         updateLists().catch(Errors.warn)
     })
 
-    return (
-        <button className={props.className} onClick={changeList}>
-            {selectedList?.name ?? <LocalisedString stringKey={"selectAList"} />}
-        </button>
-    )
+    return <Selector items={lists} descriptionKey={"selectAList"} {...props} />
 }
