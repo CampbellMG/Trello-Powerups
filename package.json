@@ -22,7 +22,6 @@
     "@typescript-eslint/parser": "^5.15.0",
     "dotenv": "^16.0.0",
     "eslint": "8.11.0",
-    "eslint-config-next": "12.1.0",
     "eslint-config-universe": "^7.0.1",
     "jest": "^27.5.1",
     "ngrok": "^4.3.1",
