@@ -1,13 +1,17 @@
 {
-  "loading": "Caricamento in corso",
+  "loading": "Caricamento",
   "sum": "Somma",
-  "noDataError": "Nessun campo personalizzato adatto trovato nell'elenco selezionato",
+  "noDataError": "Nessun campo personalizzato adatto trovati nell'elenco selezionato",
   "allLists": "Tutti gli elenchi",
   "selectAList": "Seleziona un elenco",
   "field": "Campo",
-  "mergeChecklists": "Merge Checklists.",
+  "mergeChecklists": "Unisci liste di controllo",
   "merge": "Unire",
   "addACardName": "Aggiungi un nome di carta...",
-  "authorisationHint": "Per leggere liste di controllo e creare carte sulla tua scheda, dobbiamo collegare il tuo account. Questo accensione non invierà mai i tuoi dati al di fuori di Trello....",
-  "doNotCloseWarning": "Chiusura o cliccando al di fuori di questo pop-up annullerà questa unione..."
+  "authorisationHint": "Per leggere le liste di controllo e creare schede sulla tua scheda dobbiamo collegare il tuo account. Questo potenziamento non invierà mai i tuoi dati al di fuori di Trello.",
+  "doNotCloseWarning": "La chiusura o il clic fuori questo pop-up annullerà questa fusione",
+  "sortBy": "Ordina per",
+  "originalOrder": "Ordine originale (impostazione predefinita)",
+  "ascAlphabetical": "Alfabetico",
+  "descAlphabetical": "Alfabetico inverso"
 }

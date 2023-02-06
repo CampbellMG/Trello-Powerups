@@ -1,13 +1,17 @@
 {
-  "loading": "裝載",
+  "loading": "加載",
   "sum": "和",
-  "noDataError": "未在選定列表中找到合適的自定義字段",
-  "allLists": "所有清單",
-  "selectAList": "選擇列表",
+  "noDataError": "在選定列表中找不到合適的自定義字段",
+  "allLists": "所有列表",
+  "selectAList": "選擇一個列表",
   "field": "場地",
   "mergeChecklists": "合併清單",
   "merge": "合併",
   "addACardName": "添加卡名稱...",
-  "authorisationHint": "閱讀清單並在電路板上創建卡，我們需要連接您的帳戶。此上電將永遠不會將您的數據發送到Trello之外。...",
-  "doNotCloseWarning": "關閉或單擊此彈出窗口外將取消此合併..."
+  "authorisationHint": "要閱讀清單並在板上創建卡片，我們需要連接您的帳戶。此電源永遠不會在Trello之外發送您的數據。",
+  "doNotCloseWarning": "關閉或單擊此彈出窗口將取消此合併",
+  "sortBy": "排序方式",
+  "originalOrder": "原始訂單（默認訂單）",
+  "ascAlphabetical": "字母順序",
+  "descAlphabetical": "反向字母順序"
 }

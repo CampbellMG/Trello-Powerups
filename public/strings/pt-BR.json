@@ -1,13 +1,17 @@
 {
   "loading": "Carregando",
   "sum": "Soma",
-  "noDataError": "Não há campos personalizados adequados encontrados na lista selecionada",
+  "noDataError": "Nenhum campo personalizado adequado encontrado na lista selecionada",
   "allLists": "Todas as listas",
   "selectAList": "Selecione uma lista",
   "field": "Campo",
   "mergeChecklists": "Mesclar listas de verificação",
-  "merge": "Mesclar.",
-  "addACardName": "Adicionar um nome de cartão...",
-  "authorisationHint": "Para ler listas de verificação e criar cartões em sua prancha, precisamos conectar sua conta. Este power-up nunca enviará seus dados fora de Trello....",
-  "doNotCloseWarning": "Fechamento ou clicar fora deste pop-up cancelará essa mesclagem..."
+  "merge": "Mesclar",
+  "addACardName": "Adicione um nome de cartão...",
+  "authorisationHint": "Para ler listas de verificação e criar cartões no seu quadro, precisamos conectar sua conta. Esse power-up nunca enviará seus dados para fora do Trello.",
+  "doNotCloseWarning": "Fechar ou clicar fora deste pop-up cancelará esta mesclagem",
+  "sortBy": "Ordenar por",
+  "originalOrder": "Ordem original (padrão)",
+  "ascAlphabetical": "Alfabético",
+  "descAlphabetical": "Alfabético reverso"
 }

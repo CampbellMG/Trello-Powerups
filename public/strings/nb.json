@@ -1,13 +1,17 @@
 {
   "loading": "Lasting",
   "sum": "Sum",
-  "noDataError": "Ingen egnede egendefinerte felt funnet i valgt liste",
+  "noDataError": "Ingen passende tilpassede felt som finnes i valgt liste",
   "allLists": "Alle lister",
   "selectAList": "Velg en liste",
   "field": "Felt",
   "mergeChecklists": "Slå sammen sjekklister",
   "merge": "Slå sammen",
   "addACardName": "Legg til et kortnavn...",
-  "authorisationHint": "For å lese sjekklister og lage kort på bordet ditt, må vi koble kontoen din. Denne oppstart vil aldri sende dataene dine utenfor Trello....",
-  "doNotCloseWarning": "Lukking eller klikk utenfor Denne popup vil avbryte denne fusjonen..."
+  "authorisationHint": "For å lese sjekklister og opprette kort på brettet ditt, må vi koble kontoen din. Denne oppstarten vil aldri sende dataene dine utenfor Trello.",
+  "doNotCloseWarning": "Å lukke eller klikke utenfor denne popup-",
+  "sortBy": "Sorter etter",
+  "originalOrder": "Originalbestilling (standard)",
+  "ascAlphabetical": "Alfabetisk",
+  "descAlphabetical": "Omvendt alfabetisk"
 }

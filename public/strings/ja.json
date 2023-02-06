@@ -1,13 +1,17 @@
 {
-  "loading": "ロード",
+  "loading": "読み込み",
   "sum": "和",
-  "noDataError": "選択したリストには適切なカスタムフィールドが見つかりません",
+  "noDataError": "選択したリストに適切なカスタムフィールドは見つかりません",
   "allLists": "すべてのリスト",
-  "selectAList": "リストを選択してください",
+  "selectAList": "リストを選択します",
   "field": "分野",
-  "mergeChecklists": "チェックリストをマージする",
+  "mergeChecklists": "チェックリストをマージします",
   "merge": "マージ",
-  "addACardName": "カード名を追加してください...",
-  "authorisationHint": "チェックリストを読み、ボード上のカードを作成するには、アカウントを接続する必要があります。この電源投入はトレロの外でデータを送信することはありません。...",
-  "doNotCloseWarning": "このポップアップを閉じるかクリックすると、このマージがキャンセルされます..."
+  "addACardName": "カード名を追加します...",
+  "authorisationHint": "チェックリストを読み、ボードにカードを作成するには、アカウントを接続する必要があります。このパワーアップは、Trelloの外にデータを送信することはありません。",
+  "doNotCloseWarning": "このポップアップの外側を閉じるかクリックすると、このマージがキャンセルされます",
+  "sortBy": "並び替え",
+  "originalOrder": "元の注文（デフォルト）",
+  "ascAlphabetical": "アルファベット順",
+  "descAlphabetical": "逆アルファベット順"
 }

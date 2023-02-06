@@ -1,13 +1,17 @@
 {
   "loading": "Ladataan",
   "sum": "Summa",
-  "noDataError": "Valitusta luettelosta ei löydy sopivia mukautettuja kenttiä",
+  "noDataError": "Valittujen luettelosta ei löydy sopivia mukautettuja kenttiä",
   "allLists": "Kaikki luettelot",
   "selectAList": "Valitse luettelo",
   "field": "Ala",
   "mergeChecklists": "Yhdistä tarkistuslistat",
   "merge": "Yhdistää",
   "addACardName": "Lisää kortin nimi...",
-  "authorisationHint": "Voit lukea tarkistuslistoja ja luoda kortteja hallituksellesi meidän on liitettävä tilisi. Tämä virtalähde ei koskaan lähetä tietoja Trellon ulkopuolelle....",
-  "doNotCloseWarning": "Tämän ponnahdusikkunan sulkeminen tai napsauttaminen peruuttaa tämän sulautumisen..."
+  "authorisationHint": "Jos haluat lukea tarkistuslistoja ja luoda kortteja pöydällesi, meidän on kytkettävä tilisi. Tämä käynnistäminen ei koskaan lähetä tietojasi Trellon ulkopuolelle.",
+  "doNotCloseWarning": "Tämän ponnahdusikkunan sulkeminen tai napsauttaminen peruuttaa tämän sulautumisen",
+  "sortBy": "Järjestä",
+  "originalOrder": "Alkuperäinen tilaus (oletus)",
+  "ascAlphabetical": "Aakkosellinen",
+  "descAlphabetical": "Käänteinen aakkosellinen"
 }

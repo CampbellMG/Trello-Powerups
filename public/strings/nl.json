@@ -1,13 +1,17 @@
 {
   "loading": "Bezig met laden",
   "sum": "Som",
-  "noDataError": "Geen geschikte aangepaste velden gevonden in geselecteerde lijst",
+  "noDataError": "Geen geschikte aangepaste velden gevonden in de geselecteerde lijst",
   "allLists": "Alle lijsten",
   "selectAList": "Selecteer een lijst",
   "field": "Veld",
-  "mergeChecklists": "Samenvoegende checklists",
+  "mergeChecklists": "Checklists samenvoegen",
   "merge": "Samenvoegen",
   "addACardName": "Voeg een kaartnaam toe...",
-  "authorisationHint": "Om checklists te lezen en kaarten op uw boord te maken, moeten we uw account aansluiten. Deze power-up zal uw gegevens nooit buiten Tello sturen....",
-  "doNotCloseWarning": "Sluiten of klikken buiten deze pop-up annuleert deze samenvoeging..."
+  "authorisationHint": "Om checklists te lezen en kaarten op uw bord te maken, moeten we uw account aansluiten. Deze power-up zal uw gegevens nooit buiten Trello verzenden.",
+  "doNotCloseWarning": "Het sluiten of klikken buiten deze pop-up zal deze samenvoeging annuleren",
+  "sortBy": "Sorteer op",
+  "originalOrder": "Originele bestelling (standaard)",
+  "ascAlphabetical": "Alfabetisch",
+  "descAlphabetical": "Omgekeerd alfabetisch"
 }

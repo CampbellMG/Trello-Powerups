@@ -1,13 +1,17 @@
 {
   "loading": "Ładowanie",
   "sum": "Suma",
-  "noDataError": "Brak odpowiednich płyt niestandardowych znalezionych na wybranej liście",
+  "noDataError": "Brak odpowiednich pola niestandardowych na wybranej liście",
   "allLists": "Wszystkie listy",
   "selectAList": "Wybierz listę",
   "field": "Pole",
-  "mergeChecklists": "Scal Listy kontrolne.",
+  "mergeChecklists": "Scal listy kontrolne",
   "merge": "Łączyć",
   "addACardName": "Dodaj nazwę karty...",
-  "authorisationHint": "Aby odczytać listy kontrolne i tworzyć karty na tablicy, musimy podłączyć swoje konto. Ten zasilanie nigdy nie wysyła danych poza Trello....",
-  "doNotCloseWarning": "Zamknięcie lub klikanie poza tym wyskakującym się anuluje ten scal..."
+  "authorisationHint": "Aby odczytać listy kontrolne i utworzyć karty na tablicy, musimy podłączyć swoje konto. To ulepszenie nigdy nie wyśle ​​Twoje danych poza Trello.",
+  "doNotCloseWarning": "Zamknięcie lub kliknięcie na zewnątrz tego wyskakujące okienko anuluje to scalanie",
+  "sortBy": "Sortuj według",
+  "originalOrder": "Oryginalna kolejność (domyślnie)",
+  "ascAlphabetical": "Alfabetyczny",
+  "descAlphabetical": "Odwrotne alfabetyczne"
 }
