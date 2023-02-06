@@ -20,6 +20,12 @@ const checklistMergeCardName: StorageKey = {
     key: "checklist-merge-card-name"
 }
 
+const checklistMergeSortPreference: StorageKey = {
+    scope: "board",
+    visibility: "private",
+    key: "checklist-merge-sort-preference"
+}
+
 export const Config = {
     email: "campbell@cmgcode.com",
     repo: "https://github.com/CampbellMG/Trello-Powerups",
@@ -28,12 +34,16 @@ export const Config = {
     apiKey: process.env.REACT_APP_TRELLO_KEY,
     trello: "https://trello.com",
     ids: {
-        allLists: "all-lists"
+        allLists: "all-lists",
+        originalOrder: "original-order",
+        ascAlphabetical: "ascending-alphabetical",
+        descAlphabetical: "descending-alphabetical"
     },
     keys: {
         sumListId,
         checklistMergeListId,
-        checklistMergeCardName
+        checklistMergeCardName,
+        checklistMergeSortPreference
     },
     routes: {
         mergeChecklists: "/merge-checklists",

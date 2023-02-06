@@ -4,10 +4,14 @@
   "noDataError": "Aucun champ personnalisé approprié trouvé dans la liste sélectionnée",
   "allLists": "Toutes les listes",
   "selectAList": "Sélectionnez une liste",
-  "field": "Domaine",
-  "mergeChecklists": "Fusionner des listes de contrôle",
+  "field": "Champ",
+  "mergeChecklists": "Fusion des listes de contrôle",
   "merge": "Fusionner",
   "addACardName": "Ajouter un nom de carte...",
-  "authorisationHint": "Pour lire les checklists et créer des cartes sur votre carte, nous devons connecter votre compte. Cette mise sous tension n'enverra jamais vos données en dehors de Trello....",
-  "doNotCloseWarning": "Fermer ou cliquer à l'extérieur de cette fenêtre contextuelle annulera cette fusion..."
+  "authorisationHint": "Pour lire les listes de contrôle et créer des cartes sur votre carte, nous devons connecter votre compte. Cette mise sous tension n'enverra jamais vos données en dehors de Trello.",
+  "doNotCloseWarning": "La clôture ou le clic à l'extérieur de cette fenêtre contextuelle annulera cette fusion",
+  "sortBy": "Trier par",
+  "originalOrder": "Ordre d'origine (par défaut)",
+  "ascAlphabetical": "Alphabétique",
+  "descAlphabetical": "Inversé alphabétique"
 }

@@ -1,13 +1,17 @@
 {
   "loading": "Yükleniyor",
-  "sum": "Toplamak",
+  "sum": "Özet",
   "noDataError": "Seçilen listede uygun özel alan bulunamadı",
-  "allLists": "Tüm listeler",
-  "selectAList": "Bir liste seçin",
-  "field": "Tarla",
+  "allLists": "Tüm Listeler",
+  "selectAList": "Bir Liste Seçin",
+  "field": "Alan",
   "mergeChecklists": "Birleştirme kontrol listeleri",
   "merge": "Birleştirmek",
   "addACardName": "Bir kart adı ekle...",
-  "authorisationHint": "Kontrol listelerini okumak ve kartınıza kartlar oluşturmak için hesabınızı bağlamamız gerekir. Bu güçlendirme, verilerinizi asla Trello dışında göndermez....",
-  "doNotCloseWarning": "Bu açılır pencerenin dışına kapanması veya tıklanması bu birleşmeyi iptal eder..."
+  "authorisationHint": "Kontrol listelerini okumak ve kartınızda kartlar oluşturmak için hesabınızı bağlamamız gerekir. Bu güçlendirme verilerinizi asla Trello dışına göndermeyecektir.",
+  "doNotCloseWarning": "Bu açılır pencerenin kapanması veya tıklanması bu birleştirmeyi iptal eder",
+  "sortBy": "Göre sırala",
+  "originalOrder": "Orijinal Sipariş (Varsayılan)",
+  "ascAlphabetical": "Alfabetik",
+  "descAlphabetical": "Ters alfabetik"
 }

@@ -17,7 +17,11 @@ const strings = {
     authorise: "Authorise",
     authorisationHint:
         "To read checklists and create cards on your board we need to connect your account. This power-up will never send your data outside of Trello.",
-    doNotCloseWarning: "Closing or clicking outside this pop-up will cancel this merge"
+    doNotCloseWarning: "Closing or clicking outside this pop-up will cancel this merge",
+    sortBy: "Sort by",
+    originalOrder: "Original order (default)",
+    ascAlphabetical: "Alphabetical",
+    descAlphabetical: "Reverse alphabetical"
 }
 
 const defaultString = (key: StringKey) => strings[key]

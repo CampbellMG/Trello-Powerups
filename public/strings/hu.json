@@ -1,13 +1,17 @@
 {
   "loading": "Betöltés",
   "sum": "Összeg",
-  "noDataError": "Nincs megfelelő egyéni mezők a kiválasztott listában",
-  "allLists": "Minden listát",
-  "selectAList": "Válasszon ki egy listát",
+  "noDataError": "Nincs megfelelő egyedi mezők a kiválasztott listában",
+  "allLists": "Minden lista",
+  "selectAList": "Válasszon egy listát",
   "field": "Terület",
-  "mergeChecklists": "Merge ellenőrző listák",
+  "mergeChecklists": "Egyesítse az ellenőrző listákat",
   "merge": "Összeolvad",
-  "addACardName": "Kártya neve hozzáadása...",
-  "authorisationHint": "Az ellenőrző listák olvasása és kártyák létrehozása a táblán, csatlakoztatni kell fiókját. Ez a bekapcsolás soha nem fogja elküldeni az adatokat a Trello-n kívül....",
-  "doNotCloseWarning": "A felugró ablakon kívüli zárás vagy kattintás törli ezt az összevont..."
+  "addACardName": "Adjon hozzá egy kártya nevét...",
+  "authorisationHint": "Az ellenőrző listák elolvasásához és a kártyak kártyáinak létrehozásához csatlakoztuk a fiókját. Ez a bekapcsolás soha nem küldi el adatait Trello-n kívül.",
+  "doNotCloseWarning": "A felbukkanáson kívüli bezárás vagy kattintás megszünteti ezt az egyesítést",
+  "sortBy": "Rendezés",
+  "originalOrder": "Eredeti sorrend (alapértelmezett)",
+  "ascAlphabetical": "Betűrendes",
+  "descAlphabetical": "Fordított ábécé"
 }

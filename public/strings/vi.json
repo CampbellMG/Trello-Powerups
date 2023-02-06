@@ -1,13 +1,17 @@
 {
   "loading": "Đang tải",
   "sum": "Tổng",
-  "noDataError": "Không có trường tùy chỉnh phù hợp được tìm thấy trong danh sách đã chọn",
+  "noDataError": "Không có trường tùy chỉnh phù hợp nào được tìm thấy trong danh sách được chọn",
   "allLists": "Tất cả các danh sách",
   "selectAList": "Chọn một danh sách",
-  "field": "Đồng ruộng",
-  "mergeChecklists": "Hợp nhất danh sách kiểm tra.",
-  "merge": "Hợp nhất.",
+  "field": "Cánh đồng",
+  "mergeChecklists": "Hợp nhất danh sách kiểm tra",
+  "merge": "Hợp nhất",
   "addACardName": "Thêm tên thẻ...",
-  "authorisationHint": "Để đọc danh sách kiểm tra và tạo thẻ trên bảng của bạn, chúng tôi cần kết nối tài khoản của mình. Tăng sức mạnh này sẽ không bao giờ gửi dữ liệu của bạn bên ngoài Trello....",
-  "doNotCloseWarning": "Đóng hoặc nhấp vào bên ngoài cửa sổ bật lên này sẽ hủy hợp nhất này..."
+  "authorisationHint": "Để đọc danh sách kiểm tra và tạo thẻ trên bảng của bạn, chúng tôi cần kết nối tài khoản của bạn. Việc tăng sức mạnh này sẽ không bao giờ gửi dữ liệu của bạn bên ngoài Trello.",
+  "doNotCloseWarning": "Đóng hoặc nhấp vào bên ngoài cửa sổ bật lên này sẽ hủy bỏ hợp nhất này",
+  "sortBy": "Sắp xếp theo",
+  "originalOrder": "Thứ tự ban đầu (mặc định)",
+  "ascAlphabetical": "Bảng chữ cái",
+  "descAlphabetical": "Đảo ngược theo thứ tự chữ cái"
 }

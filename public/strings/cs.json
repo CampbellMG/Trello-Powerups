@@ -1,13 +1,17 @@
 {
   "loading": "načítání",
   "sum": "Součet",
-  "noDataError": "Ve vybraném seznamu nalezena žádná vhodná vlastní pole",
+  "noDataError": "Ve vybraném seznamu nebyla nalezena žádná vhodná vlastní pole",
   "allLists": "Všechny seznamy",
   "selectAList": "Vyberte seznam",
   "field": "Pole",
   "mergeChecklists": "Sloučit kontrolní seznamy",
   "merge": "Spojit",
-  "addACardName": "Přidat název karty...",
-  "authorisationHint": "Chcete-li číst kontrolní seznamy a vytvářet karty na své desce, musíme svůj účet připojit. Toto zapnutí nikdy neposílá data mimo Trello....",
-  "doNotCloseWarning": "Uzavření nebo klepnutím mimo tuto vyskakovací okno zruší tuto sloučení..."
+  "addACardName": "Přidejte název karty...",
+  "authorisationHint": "Chcete -li si přečíst kontrolní seznamy a vytvářet karty na vaší desce, musíme připojit váš účet. Toto zapnutí nikdy neposílá vaše data mimo Trello.",
+  "doNotCloseWarning": "Uzavření nebo kliknutí mimo toto vyskakovací okno zruší toto sloučení",
+  "sortBy": "Seřazeno podle",
+  "originalOrder": "Původní objednávka (výchozí)",
+  "ascAlphabetical": "Abecední",
+  "descAlphabetical": "Reverzní abecední"
 }
