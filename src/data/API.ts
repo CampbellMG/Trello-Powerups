@@ -1,18 +1,25 @@
 import { Trello } from "../types/trello"
+import { Config } from "../res/Config"
 
 type Identifiable = { id: string }
-type Card = Identifiable & { idChecklists?: string[] }
+type Card = Identifiable & { idChecklists?: string[]; idList: string }
 type Checklist = Identifiable & { checkItems: { name: string }[] }
 type SortPreference = "asc" | "desc" | "original"
 
 const mergeChecklists =
     (token: string, trello: Trello.Client) =>
-    async (listId: string, sortPreference: SortPreference, cardName?: string) => {
+    async (boardId: string, listId: string, sortPreference: SortPreference, cardName?: string) => {
         const appendToken = (extra: object = {}) => ({ token, ...extra })
+        const allLists = listId === Config.ids.allLists
 
         const getCards = async () =>
             new Promise<Card[]>((resolve, reject) =>
                 trello.get(`lists/${listId}/cards`, appendToken({ fields: "idChecklists" }), resolve, reject)
+            )
+
+        const getAllCards = async () =>
+            new Promise<Card[]>((resolve, reject) =>
+                trello.get(`boards/${boardId}/cards`, appendToken(), resolve, reject)
             )
 
         const getChecklist = (checklistId: string) =>
@@ -20,9 +27,9 @@ const mergeChecklists =
                 trello.get(`checklists/${checklistId}`, appendToken(), resolve, reject)
             )
 
-        const createCard = () =>
+        const createCard = (containingListId: string) =>
             new Promise<Card>((resolve, reject) =>
-                trello.post(`cards/`, appendToken({ name: cardName, idList: listId }), resolve, reject)
+                trello.post(`cards/`, appendToken({ name: cardName, idList: containingListId }), resolve, reject)
             )
 
         const createChecklist = (cardId: string) =>
@@ -35,7 +42,7 @@ const mergeChecklists =
                 trello.post(`checklists/${checklistId}/checkItems`, appendToken({ name }), resolve, reject)
             )
 
-        const cards = await getCards()
+        const cards = allLists ? await getAllCards() : await getCards()
         const cardRequests = cards
             .filter(card => card.idChecklists?.length)
             .reduce((prev, { idChecklists }) => [...prev, ...(idChecklists ?? [])], [] as string[])
@@ -47,7 +54,7 @@ const mergeChecklists =
             [] as string[]
         )
 
-        const newCard = await createCard()
+        const newCard = await createCard(allLists ? cards[0]?.idList : listId)
         const checkList = await createChecklist(newCard.id)
 
         if (sortPreference === "asc") {

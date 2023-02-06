@@ -72,6 +72,7 @@ export const BoardButton = () => {
         }
 
         const storage = Storage(trello)
+        const board = await trello.board("id")
 
         try {
             setLoading({ loading: true, message: "doNotCloseWarning" })
@@ -80,11 +81,11 @@ export const BoardButton = () => {
             await storage.set(Config.keys.checklistMergeCardName, cardName)
             await storage.set(Config.keys.checklistMergeSortPreference, sortId)
 
-            await API(token, client).mergeChecklists(listId, getSortPreference(), cardName)
+            await API(token, client).mergeChecklists(board.id, listId, getSortPreference(), cardName)
         } catch (e) {
             Errors.error(e as Error)
         } finally {
-            trello?.closePopup()
+            await trello.closePopup()
         }
     }
 
