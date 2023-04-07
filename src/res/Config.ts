@@ -54,6 +54,7 @@ export const Config = {
     images: {
         logo: `${origin}/img/icon512-logo.png`,
         github: `${origin}/img/icon512-github.png`,
+        netlify: `${origin}/img/netlify.svg`,
         sums: {
             logo: `${origin}/img/icon144-sum.png`,
             demo: `${origin}/img/demo-sum.gif`,
