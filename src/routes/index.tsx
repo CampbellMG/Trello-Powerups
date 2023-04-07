@@ -68,7 +68,7 @@ export const Index = () => (
             </ul>
 
             <NetlifyLink href="https://www.netlify.com">
-                <img src="https://www.netlify.com/v3/img/components/netlify-color-bg.svg" alt="Deploys by Netlify" />
+                <img src={Config.images.netlify} alt="Deploys by Netlify" />
             </NetlifyLink>
         </Wrapper>
     </>
