@@ -66,6 +66,10 @@ export const Index = () => (
                     </LocalLink>
                 </li>
             </ul>
+
+            <NetlifyLink href="https://www.netlify.com">
+                <img src="https://www.netlify.com/v3/img/components/netlify-color-bg.svg" alt="Deploys by Netlify" />
+            </NetlifyLink>
         </Wrapper>
     </>
 )
@@ -168,4 +172,18 @@ const PowerUpIcon = styled.img`
     height: ${Sizes.extraLarge}px;
     width: ${Sizes.extraLarge}px;
     margin-right: ${Sizes.standard}px;
+`
+
+const NetlifyLink = styled.a`
+    align-self: center;
+    margin-top: ${Sizes.large}px;
+
+    &:hover {
+        box-shadow: rgba(100, 100, 111, 0.2) 0 10px 10px 0;
+        transition: box-shadow 0.15s ease-in-out;
+    }
+
+    &:active {
+        box-shadow: none;
+    }
 `
