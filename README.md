@@ -38,3 +38,5 @@ To get started with development:
 8. Create a new power-up for each that you want to develop through your own Trello account [here](https://trello.com/power-ups/admin). The Iframe connector URL is the ngrok link from above appended with the power-up's route. For example the sums power-up would be `https://XXXX-XXX-XX-XX-XXX.ngrok.io/sums`. If you don't want to create several power-ups for development, you can just change the iFrame connector URL each time you want to start working on a new power-up.
 9. Open the Capabilities tab and select the power-up's required capabilities. You can find these in the power-ups entry point, e.g. sums is in `src/power-ups/sums/Sums.tsx`.
 12. You should now be able to add each power up to your Trello board and get started.
+
+<a href="https://www.netlify.com"> <img src="https://www.netlify.com/v3/img/components/netlify-color-bg.svg" alt="Deploys by Netlify" /> </a>
