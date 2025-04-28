@@ -26,6 +26,12 @@ const checklistMergeSortPreference: StorageKey = {
     key: "checklist-merge-sort-preference"
 }
 
+const sumSortPreference: StorageKey = {
+    scope: "board",
+    visibility: "private",
+    key: "sum-sort-preference"
+}
+
 export const Config = {
     email: "campbell@cmgcode.com",
     repo: "https://github.com/CampbellMG/Trello-Powerups",
@@ -43,7 +49,8 @@ export const Config = {
         sumListId,
         checklistMergeListId,
         checklistMergeCardName,
-        checklistMergeSortPreference
+        checklistMergeSortPreference,
+        sumSortPreference
     },
     routes: {
         mergeChecklists: "/merge-checklists",

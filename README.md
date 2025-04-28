@@ -30,7 +30,7 @@ For testing, we can use [ngrok](https://ngrok.com/) to tunnel into your local bu
 To get started with development:
 1. Clone the project & run `npm i` to install the required dependencies.
 2. Access your developer API key [here](https://trello.com/app-key).
-3. Create a local environment file (.env.development.local) in the root directory of the project and add the following: `REACT_APP_TRELLO_KEY={YOUR-API-KEY-GOES-HERE}`.
+3. Create a local environment file (.env) in the root directory of the project and add the following: `REACT_APP_TRELLO_KEY={YOUR-API-KEY-GOES-HERE}`.
 4. Start the project with `npm run start` & wait for it to load.
 5. Start ngrok with `npm run serve` (You may need to login to a free ngrok account for this).
 6. You should now have a public url that looks something like this: `https://XXXX-XXX-XX-XX-XXX.ngrok.io`.
