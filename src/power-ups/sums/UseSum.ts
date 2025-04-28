@@ -8,7 +8,7 @@ type Board = Trello.PowerUp.Board
 type Card = Trello.PowerUp.Card
 type Sum = {
     id: string
-    name?: string
+    name: string
     sum: number
 }
 type State = {

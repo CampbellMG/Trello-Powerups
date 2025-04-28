@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { Loading } from "../../components/Loading"
 import { useSum } from "./UseSum"
 import { Strings } from "../../res/Strings"
@@ -11,12 +11,34 @@ import { Storage } from "../../data/Storage"
 import { Config } from "../../res/Config"
 import { Sizes } from "../../res/Sizes"
 
+type SortKey = "sum" | "name"
+
+type SortState = {
+    key: SortKey
+    direction: "asc" | "desc"
+}
+
 const { localization } = Strings
 
 export const BoardButton = () => {
     const { current: trello } = useRef(window.TrelloPowerUp?.iframe({ localization }))
     const [listId, setListId] = useState<string | undefined>()
+    const [sortConfig, setSortConfig] = useState<SortState>({ key: "name", direction: "asc" })
     const sumState = useSum(trello, listId)
+    const sortedData = useMemo(() => {
+        if (!sumState.data) {
+            return []
+        }
+
+        const { key, direction } = sortConfig
+        return [...sumState.data].sort((a, b) => {
+            if (key === "name") {
+                return direction === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
+            } else {
+                return direction === "asc" ? a.sum - b.sum : b.sum - a.sum
+            }
+        })
+    }, [sumState, sortConfig])
 
     const resize = (content: HTMLDivElement | null) => content?.scrollHeight && trello?.sizeTo(content.scrollHeight)
 
@@ -30,19 +52,42 @@ export const BoardButton = () => {
         cacheSelectedList().catch(Errors.warn)
     }, [listId, trello])
 
+    useEffect(() => {
+        const cacheSortConfig = async () => {
+            if (trello) {
+                await Storage(trello).set(Config.keys.sumSortPreference, sortConfig)
+            }
+        }
+
+        cacheSortConfig().catch(Errors.warn)
+    }, [sortConfig, trello])
+
     useMount(() => {
-        const initialiseSelectedListId = async () => {
+        const initialisePreferences = async () => {
             if (!trello) {
                 return
             }
 
             const cachedListId = await Storage(trello).get<string>(Config.keys.sumListId)
+            const cachedSortPref = await Storage(trello).get<SortState>(Config.keys.sumSortPreference)
 
             setListId(cachedListId)
+
+            if (cachedSortPref) {
+                setSortConfig(cachedSortPref)
+            }
         }
 
-        initialiseSelectedListId().catch(Errors.warn)
+        initialisePreferences().catch(Errors.warn)
     })
+
+    const handleSort = (key: SortKey) => {
+        setSortConfig(prev =>
+            prev?.key === key
+                ? { key, direction: prev.direction === "asc" ? "desc" : "asc" }
+                : { key, direction: "asc" }
+        )
+    }
 
     if (sumState.loading) {
         return (
@@ -58,22 +103,24 @@ export const BoardButton = () => {
         Content = () => (
             <SumTable>
                 <thead>
-                    <tr>
-                        <th>
-                            <LocalisedString stringKey={"field"} trello={trello} />
-                        </th>
-                        <th>
-                            <LocalisedString stringKey={"sum"} trello={trello} />
-                        </th>
-                    </tr>
+                <tr>
+                    <SumTableHeader onClick={() => handleSort("name")}>
+                        <LocalisedString stringKey={"field"} trello={trello} />
+                        {sortConfig?.key === "name" && (sortConfig.direction === "asc" ? " ▲" : " ▼")}
+                    </SumTableHeader>
+                    <SumTableHeader onClick={() => handleSort("sum")}>
+                        <LocalisedString stringKey={"sum"} trello={trello} />
+                        {sortConfig?.key === "sum" && (sortConfig.direction === "asc" ? " ▲" : " ▼")}
+                    </SumTableHeader>
+                </tr>
                 </thead>
                 <tbody>
-                    {Object.values(sumState.data ?? []).map(it => (
-                        <tr key={it.id}>
-                            <td>{it.name}</td>
-                            <td>{it.sum.toLocaleString()}</td>
-                        </tr>
-                    ))}
+                {sortedData.map(it => (
+                    <tr key={it.id}>
+                        <td>{it.name}</td>
+                        <td>{it.sum.toLocaleString()}</td>
+                    </tr>
+                ))}
                 </tbody>
             </SumTable>
         )
@@ -109,6 +156,10 @@ const ListSelector = styled(ListSelectorComponent)`
 
 const SumTable = styled.table`
     flex: 1;
+`
+
+const SumTableHeader = styled.th`
+    cursor: pointer;
 `
 
 const ErrorTextWrapper = styled.div`
